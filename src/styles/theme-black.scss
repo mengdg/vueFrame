@@ -1,0 +1,50 @@
+@import './variables.scss';
+$font-color:#ffffff;
+$background-color:#1c2227;
+.theme-black {
+  background: $background-color;
+
+  .app-wrapper {
+    background: $background-color; //背景颜色
+  }
+
+  .navbar {
+    background:$menuBg;
+  }
+
+  .app-breadcrumb.el-breadcrumb .no-redirect {
+    color: $font-color !important;
+  }
+
+  .right-menu {
+    .el-dropdown {
+      color: $font-color;
+    }
+  }
+
+  .dashboardbox .middle {
+    background: $menuBg;
+    color: $font-color;
+    .meta{
+      border-top: #6a757f;
+      background-color: #6a757f;
+    }
+    .chartsbox1 {
+      .rightlist {
+        color: $font-color;
+        ul li .serial{
+          background: #344657;
+        }
+      }
+    }
+  }
+
+  .el-card {
+    background: $menuBg;
+    color: $font-color;
+    border: 1px solid $menuBg;
+    .el-card__header{
+      border-bottom: 1px solid #6a757f;
+    }
+  }
+}

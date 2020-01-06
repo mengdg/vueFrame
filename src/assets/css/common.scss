@@ -1,0 +1,117 @@
+.wrapper {
+  min-height: calc(100% - 76px);
+  padding: 15px;
+  background: #fff;
+}
+.header-style {
+  font-weight: 700;
+  color: #000;
+  background: #eef7f9 !important;
+}
+.el-table th {
+  background: #eef7f9 !important;
+}
+
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.panel-default > .panel-heading {
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+.panel.panel-default {
+  margin-bottom: 0px;
+  border-radius: 2px;
+}
+.page-body .filter-panel {
+  border-radius: 0;
+  width: 260px;
+  float: left;
+  /* position: absolute; */
+}
+.page-body .filter-panel .panel-body {
+  padding: 7px 10px;
+}
+.page-body .filter-panel .panel-body .collapse-toggle {
+  margin: 5px -3px;
+}
+.collapse-toggle {
+  cursor: pointer;
+}
+.panel-default {
+  border-color: #ddd;
+}
+
+.list-group {
+  margin-top: 0;
+  padding-left: 0;
+  margin-bottom: 15px;
+  .list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+}
+.page-body .filter-panel .panel-body .list-group-item {
+  border: none;
+  padding: 5px;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 12px;
+}
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.arrow {
+  font-weight: 700;
+}
+
+.el-table--border td,
+.el-table--border th,
+.el-table__body-wrapper .el-table--border.is-scrolling-left ~ .el-table__fixed {
+  border-right: 0px solid #ebeef5;
+}
+
+.corlor-red {
+  color: red;
+}
+
+.hand {
+  cursor: pointer;
+}
+
+.head-search-box {
+  overflow: visible !important;
+  .el-input {
+    overflow: visible !important;
+  }
+}
+.fr {
+  float: right;
+}
+// 实时指标表格样式
+.el-table__expanded-cell[class*='cell'] {
+  padding: 0;
+  border-bottom: 0;
+}
+
