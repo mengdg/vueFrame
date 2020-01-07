@@ -5,6 +5,6 @@ const getters = {
   avatar: state => state.user.avatar,
   name: state => state.user.name,
   theme: state => state.app.theme,
-  navbarPosition: state => state.app.navbarPosition
+  navbarPosition: state => state.app.navbarPosition,
 }
 export default getters

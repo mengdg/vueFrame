@@ -3,11 +3,11 @@ import Cookies from 'js-cookie'
 const state = {
   sidebar: {
     opened: Cookies.get('sidebarStatus') ? !!+Cookies.get('sidebarStatus') : true,
-    withoutAnimation: false
+    withoutAnimation: false,
   },
   device: 'desktop',
   theme: Cookies.get('theme') ? Cookies.get('theme') : 'white',
-  navbarPosition: Cookies.get('navbar-position') ? Cookies.get('navbar-position') : 'left'
+  navbarPosition: Cookies.get('navbar-position') ? Cookies.get('navbar-position') : 'left',
 }
 
 const mutations = {
@@ -33,45 +33,45 @@ const mutations = {
   },
   SET_NAVBAR_POSITION: (state, position) => {
     state.navbarPosition = position
-  }
+  },
 }
 
 const actions = {
   toggleSideBar({
-    commit
+    commit,
   }) {
     commit('TOGGLE_SIDEBAR')
   },
   closeSideBar({
-    commit
+    commit,
   }, {
-    withoutAnimation
+    withoutAnimation,
   }) {
     commit('CLOSE_SIDEBAR', withoutAnimation)
   },
   toggleDevice({
-    commit
+    commit,
   }, device) {
     commit('TOGGLE_DEVICE', device)
   },
   setTheme({
-    commit
+    commit,
   }, theme) {
     Cookies.set('theme', theme)
     commit('SET_THEME', theme)
     document.body.className = 'theme-' + theme
   },
   setNavbarPosition({
-    commit
+    commit,
   }, position) {
     Cookies.set('navbar-position', position)
     commit('SET_NAVBAR_POSITION', position)
-  }
+  },
 }
 
 export default {
   namespaced: true,
   state,
   mutations,
-  actions
+  actions,
 }

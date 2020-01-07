@@ -163,7 +163,7 @@ export default {
           label: '本月',
         },
         {
-          label: '本年'
+          label: '本年',
         },
       ],
       // 时间范围
@@ -183,10 +183,6 @@ export default {
         },
         {
           name: '工专路0号店',
-          value: 323234
-        },
-        {
-          name: '工专路0号店',
           value: 323234,
         },
         {
@@ -197,14 +193,17 @@ export default {
           name: '工专路0号店',
           value: 323234,
         },
-      ]
+        {
+          name: '工专路0号店',
+          value: 323234,
+        },
+      ],
     }
   },
   computed: {
-    ...mapGetters(['name'])
+    ...mapGetters(['name']),
   },
   mounted() {
-    console.log(22222)
     this.drawBar()
   },
   methods: {
@@ -229,26 +228,25 @@ export default {
       var myChart = this.$echarts.init(
         document.getElementById('chart_example')
       )
-      console.log(myChart)
       const option = {
         color: ['#58a2f8'],
         title: {
           text: '销售趋势',
           textStyle: {
-            fontSize: 14
+            fontSize: 14,
           },
           left: '24px',
-          top: '20px'
+          top: '20px',
         },
         grid: {
           left: '5%',
-          right: '5%'
+          right: '5%',
         },
         tooltip: {
           trigger: 'axis',
           axisPointer: {
-            type: 'none'
-          }
+            type: 'none',
+          },
         },
         xAxis: [
           {
@@ -265,26 +263,26 @@ export default {
               '9月',
               '10月',
               '11月',
-              '12月'
+              '12月',
             ],
             axisTick: {
-              alignWithLabel: true
-            }
-          }
+              alignWithLabel: true,
+            },
+          },
         ],
         yAxis: [
           {
-            type: 'value'
-          }
+            type: 'value',
+          },
         ],
         series: [
           {
             name: '每月花费',
             type: 'bar',
             barWidth: '60%',
-            data: [995, 666, 444, 858, 654, 236, 645, 546, 846, 225, 547, 356]
-          }
-        ]
+            data: [995, 666, 444, 858, 654, 236, 645, 546, 846, 225, 547, 356],
+          },
+        ],
       }
       myChart.setOption(option)
 
@@ -292,8 +290,8 @@ export default {
       window.addEventListener('resize', () => {
         myChart.resize()
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

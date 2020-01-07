@@ -12,14 +12,14 @@ export default {
   props: {
     show: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   computed: {
     key() {
       return this.$route.path
-    }
-  }
+    },
+  },
 }
 </script>
 

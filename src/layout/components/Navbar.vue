@@ -61,12 +61,19 @@ import Hamburger from '@/components/Hamburger'
 export default {
   components: {
     Breadcrumb,
-    Hamburger
+    Hamburger,
   },
   props: {
     show: {
       type: Boolean,
-      default: true
+      default: true,
+    },
+  },
+  data() {
+    return {
+      themes: 'white',
+      navbarPositions: 'left',
+      dialogVisible: false,
     }
   },
   computed: {
@@ -75,8 +82,8 @@ export default {
       'avatar',
       'name',
       'theme',
-      'navbarPosition'
-    ])
+      'navbarPosition',
+    ]),
   },
   watch: {
     themes: function(val) {
@@ -84,14 +91,7 @@ export default {
     },
     navbarPositions: function(val) {
       this.$store.dispatch('app/setNavbarPosition', val)
-    }
-  },
-  data() {
-    return {
-      themes: 'white',
-      navbarPositions: 'left',
-      dialogVisible: false
-    }
+    },
   },
   created() {
     this.themes = this.theme
@@ -108,8 +108,8 @@ export default {
     async logout() {
       await this.$store.dispatch('user/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
-    }
-  }
+    },
+  },
 }
 </script>
 

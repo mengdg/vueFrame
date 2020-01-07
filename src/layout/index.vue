@@ -1,5 +1,6 @@
 <template>
   <div :class="classObj" class="app-wrapper">
+    <!-- 导航栏在左侧 -->
     <div v-if="show" class="verticalSidebar">
       <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
       <sidebar class="sidebar-container" />
@@ -10,6 +11,7 @@
         <app-main />
       </div>
     </div>
+    <!-- 导航栏在上方 -->
     <div v-else class="horizontalSidebar">
       <horizontal-sidebar />
       <div class="main-container">
@@ -34,9 +36,14 @@ export default {
     Navbar,
     Sidebar,
     AppMain,
-    HorizontalSidebar
+    HorizontalSidebar,
   },
   mixins: [ResizeMixin],
+  data() {
+    return {
+      show: true, // 切换导航位置。为true时左侧，false时为上方
+    }
+  },
   computed: {
     sidebar() {
       return this.$store.state.app.sidebar
@@ -52,17 +59,12 @@ export default {
         hideSidebar: !this.sidebar.opened,
         openSidebar: this.sidebar.opened,
         withoutAnimation: this.sidebar.withoutAnimation,
-        mobile: this.device === 'mobile'
+        mobile: this.device === 'mobile',
       }
     },
     ...mapGetters([
-      'navbarPosition'
-    ])
-  },
-  data() {
-    return {
-      show: true // 切换导航位置。为true时左侧，false时为上方
-    }
+      'navbarPosition',
+    ]),
   },
   mounted() {
     // console.log(this.$router, "sss");
@@ -70,8 +72,8 @@ export default {
   methods: {
     handleClickOutside() {
       this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })
-    }
-  }
+    },
+  },
 }
 </script>
 
